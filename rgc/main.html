@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+<head onloadstart="loadGame(),l()">
+    <span style="font-size:30px;cursor:pointer;background-color: gray;" onclick="openNav()">&#9776; </span>
+    <link rel="stylesheet" href="main.css">
+    <title>GAME</title> <div style="text-align: center;">
+    <span id="moneyt" class="status" style="color: yellow;"></span> 
+    <span id="energyt" class="status" style="color: orange;"></span>
+    <span id="healtht" class="status" style="color: green;"></span> </div>
+</head>
+
+<div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="#" onclick="lm()" id="md">DARK MODE</a>
+      <a href="#" onclick="saveGame()">SAVE GAME</a>
+      <a href="#" onclick="S()">INFO</a>
+      <a href="#">CONTACT</a>
+    </div>
+  </div>
+  
+<body onload="text(),start()">
+    <div class="tab">
+        <button class="tablinks" onclick="op(event, 'activities')">Activities</button>
+        <button class="tablinks" onclick="op(event, 'shop')">Shop</button>
+        <button class="tablinks" onclick="op(event, 'INVENTORY'),displayInventory()">Inventory</button>
+        <button class="tablinks" onclick="op(event, 'PEOPLE')">PEOPLE</button>
+    <h2 id="message" class="tablinks"></h2>  
+</div>
+      <div id="activities" class="tabcontent" style="background-color: gray;">
+        <table>   <tr> 
+            <td>  <button id="mine" onclick="mine(mineadd),text(),limit(),getmine()">mine</button> </td>
+            <td ><button onclick="d(5),  setTimeout(text, 5000)">REST </button> <span id="timer"></span></td>
+            </tr>          </table>
+      </div>
+      <div id="shop" class="tabcontent" style="background-color: gray ;">
+ <button class="shopitem" id="benergy" onclick="buy(10,1),text()"> ENERGY/10$</button>
+ <button class="shopitem" id="vit" onclick="buy(10,2),text()">VITAMIN/10$</button>
+      </div>  
+      <div id="INVENTORY" class="tabcontent" style="background-color: gray ;">
+        <h1>Inventory</h1>
+        <ul id="inventoryList"></ul>
+        <h2>Sell Item</h2>
+  <form id="sellForm">
+    <label for="itemSelect">Item:</label>
+    <select id="itemSelect"></select>
+    <label for="quantityInput">Quantity:</label>
+    <input type="number" id="quantityInput" min="1" value="1">
+    <button type="submit">Sell</button>
+  </form>
+      </div> 
+      <div id="other" class="tabcontent" style="background-color: gray ;">
+      </div>   
+</body>
+<script src="js/rgc.js"></script>
+<script src="js/design.js"></script>
+<script src="js/inventory.js"></script>
+</html>
